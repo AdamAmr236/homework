@@ -1,0 +1,126 @@
+\documentclass[dvips,12pt]{article}
+
+\usepackage[pdftex]{graphicx}
+\usepackage{url}
+\usepackage{mathpazo}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=1.0in,
+	right=1.0in,
+	top=1.0in,
+	bottom=1.0in,
+}
+
+\renewcommand{\baselinestretch}{1.25}
+
+\begin{document}
+
+% Everything after this becomes content
+% Replace the text between curly brackets with your own
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
+	
+	\center % Centre everything on the page
+	
+	
+	\textsc{\LARGE Proposal}\\[1.5cm] % Main heading such as the name of your university/college
+		
+	\HRule\\[0.4cm]
+	
+	{\huge\bfseries Room Display}\\[0.4cm] % Title of your document
+	
+	\HRule\\[1.5cm]
+	
+	
+	\textsc{\Large Plan \#1}\\[0.5cm] % Major heading such as course name
+	
+	\textsc{\large Adam Amr}\\[0.5cm] % Minor heading such as course title
+	
+	%------------------------------------------------
+	%	Author(s)
+	%------------------------------------------------
+	
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft}
+			\large
+			\textit{Client}\\
+			Mary \textsc{Tully} % Your name
+		\end{flushleft}
+	\end{minipage}
+	~
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushright}
+			\large
+			\textit{Advisor}\\
+			Dr. Chris \textsc{Reedy} % Supervisor's name
+		\end{flushright}
+	\end{minipage}
+	
+	% If you don't want a supervisor, uncomment the two lines below and comment the code above
+	%{\large\textit{Author}}\\
+	%John \textsc{Smith} % Your name
+	
+	%------------------------------------------------
+	%	Date
+	%------------------------------------------------
+	
+	\vfill\vfill\vfill % Position the date 3/4 down the remaining page
+	
+	{\large\today} % Date, change the \today to a set date if you want to be precise
+	
+	%------------------------------------------------
+	%	Logo
+	%------------------------------------------------
+	
+	%\vfill\vfill
+	%\includegraphics[width=0.2\textwidth]{placeholder.jpg}\\[1cm] % Include a department/university logo - this will require the graphicx package
+	 
+	%----------------------------------------------------------------------------------------
+	
+	\vfill % Push the date up 1/4 of the remaining page
+	
+\end{titlepage}
+
+\tableofcontents
+\setcounter{tocdepth}{2}
+\newpage
+
+
+\section{Introduction}
+
+Scheduling a time to meet with professors in the computer science department is currently a static process. As far as a publicly available schedule there is just the predetermined office hours. For the most part, this is a reliable way to know a time slot when a professor is in their office, but it doesn't give students the full scope of a professor's availability during the school period. 
+
+Our goal with the Room Display is to give the professors the ability to organize the flow of their meetings by having a publicly accessible version of their schedules, the content and specifics being up to their discretion, to easily show students if they're available, and if not, set up a meeting at a later time.
+
+\subsection{Problem Statement}
+
+Over the past several years, the Computer Science department has been quickly expanding. The computer science program has seen an increase in enrollment by more than 300\% in the last five years \cite{wfarticle}, which means that the department has had to increase the size of the faculty and rearrange the layout of the department to accommodate this new staff.
+
+One part of the new arrangement is an area which contains two rooms that are used as the joint offices for five, and soon to be six, different professors and is known as the bullpen. When meeting with these professors to discuss the project, it became clear that a device that clearly displays a their current and future availability would be beneficial in organizing the flow of students in the bullpen.
+
+\subsection{Background}
+
+There is currently no signs displayed on the outside of the bullpen that indicate any schedules. The only way to be certain a professor will be in their office is to go online to find their office hours. If a student were to visit the bullpen outside of the allotted office hours and a professor was unavailable or not present, they can either try again at a later time or send them an email which the professor may or may not respond to.
+
+\subsection{Needs Statement}
+The lack of a scheduling system outside of the bullpen means if a students visits the office of their professor and they are not available, they will have gained to knowledge as to when the professor can meet in the future. If the student sends an email XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx
+
+\subsection{Objective}
+
+The Room Display will be a quick way to see when a professor is available and provide a new method to schedule a meeting that gives students direct access to open time slots. It will also remove the need for professors to organize the meetings for all of their students.
+
+\newpage
+
+\begin{thebibliography}{99}
+\bibitem{wfarticle}
+Western Today 
+\textit{WWU Awarded \$1.6M to Increase Capacity for Computer Science Degrees}
+\end{thebibliography}
+
+
+
+\end{document}

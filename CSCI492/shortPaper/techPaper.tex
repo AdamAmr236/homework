@@ -1,0 +1,211 @@
+\documentclass[12pt]{article}
+
+\usepackage[pdftex]{graphicx}
+\usepackage{url}
+\usepackage{mathpazo}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=1.0in,
+	right=1.0in,
+	top=1.0in,
+	bottom=1.0in,
+}
+
+\renewcommand{\baselinestretch}{1.2}
+
+\begin{document}
+
+% Everything after this becomes content
+% Replace the text between curly brackets with your own
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
+	
+	\center % Centre everything on the page
+	
+	
+	\textsc{\LARGE Proposal}\\[1.5cm] % Main heading such as the name of your university/college
+		
+	\HRule\\[0.4cm]
+	
+	{\huge\bfseries Room Display}\\[0.4cm] % Title of your document
+	
+	\HRule\\[1.5cm]
+	
+	
+	\textsc{\Large Plan \#1}\\[0.5cm] % Major heading such as course name
+	
+	\textsc{\large Adam Amr}\\[0.5cm] % Minor heading such as course title
+	
+	%------------------------------------------------
+	%	Author(s)
+	%------------------------------------------------
+	
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft}
+			\large
+			\textit{Client}\\
+			Mary \textsc{Tully} % Your name
+		\end{flushleft}
+	\end{minipage}
+	~
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushright}
+			\large
+			\textit{Advisor}\\
+			Dr. Chris \textsc{Reedy} % Supervisor's name
+		\end{flushright}
+	\end{minipage}
+	
+	% If you don't want a supervisor, uncomment the two lines below and comment the code above
+	%{\large\textit{Author}}\\
+	%John \textsc{Smith} % Your name
+	
+	%------------------------------------------------
+	%	Date
+	%------------------------------------------------
+	
+	\vfill\vfill\vfill % Position the date 3/4 down the remaining page
+	
+	{\large\today} % Date, change the \today to a set date if you want to be precise
+	
+	%------------------------------------------------
+	%	Logo
+	%------------------------------------------------
+	
+	%\vfill\vfill
+	%\includegraphics[width=0.2\textwidth]{placeholder.jpg}\\[1cm] % Include a department/university logo - this will require the graphicx package
+	 
+	%----------------------------------------------------------------------------------------
+	
+	\vfill % Push the date up 1/4 of the remaining page
+	
+\end{titlepage}
+
+\tableofcontents
+\setcounter{tocdepth}{2}
+\newpage
+
+
+\section{Introduction}
+
+Scheduling a time to meet with professors in the computer science department is currently a static process. As far as a publicly available schedule there is just the predetermined office hours. For the most part, this is a reliable way to know a time slot when a professor is in their office, but it doesn't give students the full scope of a professor's availability during the school period. 
+
+Our goal with the Room Display is to give the professors the ability to organize the flow of their meetings by having a publicly accessible version of their schedules, the content and specifics being up to their discretion, to easily show students if they're available, and if not, request a meeting at a later time.
+
+\subsection{Problem Statement}
+
+Over the past several years, the computer science department has been quickly expanding. The computer science program has seen an increase in enrollment by more than 300\% in the last five years \cite{wfarticle}, which means that the department has had to increase the size of the faculty and rearrange the layout of the department to accommodate the new staff.
+
+One part of the new arrangement is an area which contains two rooms that are used as the joint offices for five, and soon to be six, different professors and is known as the bullpen. When meeting with these professors to discuss the project, it became clear that a device that clearly displays their current and future availability would be beneficial in organizing the flow of students in the bullpen.
+
+\subsection{Background}
+
+There is currently no signs displayed on the outside of the bullpen that display any schedules. The only way to be certain a professor will be in their office is to go online to find their office hours. If a student visits the bullpen outside of the allotted office hours and a professor is unavailable or not present, they gain no knowledge as to when the professor is next available. They can either try again at a later time or send them an email which the professor may or may not respond to.
+
+\subsection{Needs Statement}
+The student needs to have a way to get access to a dynamic shedule that not only shows a professor's office hours, but the entire scope of the professor's availability to meet with students that will reduce the amount of steps in creating a meeting for both students and faculty. This scheule also needs to be able to adapt to changes that may occur in anybody's schedule.  
+
+
+\subsection{Objective}
+
+The Room Display will be a quick way to see when a professor is available and provide a new method to schedule a meeting that gives students direct access to open time slots. It will also remove the need for professors to organize the meetings for all of their students.
+
+\section{Proposed Technical Approach}
+Since there is currently no system in place, a Raspberry Pi 3 will be purchased with a touchscreen display that will be mounted outside of the bullpen to allow students to interact with it directly. However, the Raspberry Pi will be running a web based app, which requires server space that will supplied by WWU CS Support. 
+
+We are currently working on a similar version of the Room Display for scheduling meetings in the conference room of the computer science department, so by modifying the functionality, we will be able to make a version more suitable for the needs of the bullpen.
+
+\subsection{Requirements}
+
+\begin{center}
+\begin{tabular}{| p{7.5cm} | p{7.5cm} |}
+\hline
+\textbf{Requirement} & \textbf{Solution}\\
+\hline
+1.) No scheduling errors or conflicts are made & The server will be immediately updated when any changes to the schedule are made. Any attempt to schedule a time will check with the server to ensure the time slot is actually available.\\
+\hline
+2.) The device is at least as fast as sending an email & The Raspberry Pi 3 was specifically chosen for it's fast speed in comparison to other Raspberry Pi's \cite{picomp}, ensuring quick load times for all processes the system will use. The interface on the Raspberry Pi will be sparse and will require only one link to find the schedule of a professor. \\
+\hline
+\end{tabular}
+\end{center}
+
+\newpage
+\subsection{Architecture Design}
+The Room Display will use an ethernet cable to ensure a more reliable connection to the internet. It will also use power over ethernet to reduce the number of wires coming from the device. The web app will be using JavaScript to create an interface to interact with and will likely use a light version of a data base to hold all of the schedule times and information.
+
+\subsection{Implementation Design}
+The first page on the Room Display will be a simple home page that shows a list of all the professors in the bullpen with a visual indication to show if the professor is available or not. From there, a student can click on a professor on the list to get a view of that professor's schedule for the day. If a student wants to schedule a time to meet with the professor, they can simply click on that time on the schedule itself that will then navigate to a page that will give them more specific options to schedule the meeting. However, from the original schedule page, the student will also be given the option to view the schedule for days in the future as well as view a brief profile of the professor. 
+
+
+\subsection{Quality Assurance Plan}
+\begin{center}
+\begin{tabular}{|p{4cm}|p{6cm}|p{6cm}|}
+\hline
+\textbf{Risk} & \textbf{Risk Outcome:} & \textbf{Risk Remediation:} \\
+\hline
+Product is too difficult to use & A product that is too diffult to use will mean it will be rarely used, which would be a waste of the time and resources put into the product & Keep the interface simple and reduce the amount of navigation required for uses that are of priority\\
+\hline
+Mulitple meetings are scheduled for a single time & Scheduling errors would lead to confusion and a loss of trust in the system, which would ultimately lead to students not using the device & Have all requests made to modify the schedule be run through a single source to ensure proper communication between devices. Also do a thorough check for each request.\\
+\hline
+Student interferes with professor's schedule & May lead to professor missing certain meetings and would nullify the vailidity of the entire schedule & Only allow students to make requests to the professors rather than having actual direct access to modifying the schedule\\
+\hline
+
+\end{tabular}
+\end{center}
+
+\section{Expected Project Results}
+Once the Room Display is complete, it will provide the following benefits:
+
+\begin{enumerate}
+\item A visit to the bullpen will always be productive in some way.
+\item The scheduling process will be simplified for both students and faculty.
+\item Professors will spend less time managing their student meetings.
+\end{enumerate}
+
+\subsection{Measures of Success}
+The project will be considered a success if the following criteria are met: 
+
+\begin{enumerate}
+\item Students and faculty are actively using the display.
+\item All meetings are scheduled accurately.
+\item Users spend less time than when using the previous system to schedule meetings.
+\end{enumerate}
+
+\subsection{Schedule}
+\begin{tabular}{|p{7.5cm}|p{7.5cm}|}
+\hline
+\textbf{Deliverable} & \textbf{Date} \\
+\hline
+Connection to server set up & 11/3/2017 \\
+\hline
+Initial visual style of pages completed & 11/17/2017 \\
+\hline
+Initial version of scheduling system completed & 12/1/2017 \\
+\hline 
+Merging of front end and back end into initial version of Room Display & 1/19/2018 \\
+\hline
+Tests run and major bugs identified & 2/2/2018 \\ 
+\hline
+Major bugs fixed & 2/16/2018 \\
+\hline
+Room Display mounted outside of bullpen & 3/2/2018 \\
+\hline
+\end{tabular}
+
+\begin{thebibliography}{99}
+\bibitem{wfarticle}
+Western Today 
+\textit{WWU Awarded \$1.6M to Increase Capacity for Computer Science Degrees}
+
+\bibitem{picomp}
+SocialCompare.com 
+\textit{RaspberryPI models comparison}
+\end{thebibliography}
+
+
+
+\end{document}
