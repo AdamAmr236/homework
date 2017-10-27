@@ -1,0 +1,59 @@
+ul {
+	position: fixed;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+	overflow: hidden;
+	background-color: #222;
+	right: 20px;
+}
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align : center;
+    padding: 14px 16px;
+    text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+  -o-transition:.2s;
+  -ms-transition:.2s;
+  -moz-transition:.2s;
+  -webkit-transition:.2s;
+  /* ...and now for the proper property */
+  transition:.2s;
+}
+li a:hover{
+	background-color: #800;
+}
+p, h1 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+img.cover{
+	width: 10px;
+	height: 10px;
+}
+/* html {  */
+  /* background: url(images/waves.jpg) no-repeat center center fixed;  */
+  /* -webkit-background-size: cover; */
+  /* -moz-background-size: cover; */
+  /* -o-background-size: cover; */
+  /* background-size: cover; */
+/* } */
+img{
+	opacity: 0.5;
+	width: 50%;
+  -o-transition:.1s;
+  -ms-transition:.1s;
+  -moz-transition:.1s;
+  -webkit-transition:.1s;
+  /* ...and now for the proper property */
+  transition:.1s;
+}
+img:hover{
+	opacity: 1.0;
+	width: 51%
+	
+}
