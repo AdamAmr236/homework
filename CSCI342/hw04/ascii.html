@@ -4,6 +4,7 @@
 		<title>ASCIImation</title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="ascii.css" />
+		<script type="text/javascript" src="animations.js"></script>
 		<script type="text/javascript" src="ascii.js"></script>
 	</head>
 
@@ -15,19 +16,39 @@
 
 		</div>
 		
-		<div class="controlsarea">
-			<div class="option">
+		<div id="optionsarea">
+			<fieldset class="option">
                 <legend>Play Controls:</legend> 
-                <button>Start</button>
-                <button>End</button>
-            </div>
+                <button onclick="startAnimation()">Start</button>
+                <button onclick="endAnimation()">End</button>
+			</fieldset>
+			<fieldset class="option">
+				<legend>Animation:</legend>
+				<select id='animation' onchange="changeAnimation()">
+					<option value="BLANK">Blank</option>
+					<option value="EXERCISE">Exercise</option>
+				  	<option value="JUGGLER">Juggler</option>
+				  	<option value="BIKE">Bike</option>
+				  	<option value="DIVE">Dive</option>
+				  	<option value="CUSTOM">Custom</option>
+				</select> 
+			</fieldset>
+			<fieldset class="option">
+				<legend>Size:</legend>
+				<select id='fontSize' onchange="changeFontSize()">
+					<option value='7pt'>Tiny</option>
+					<option value='10pt'>Small</option>
+					<option value='12pt'>Medium</option>
+					<option value='16pt'>Large</option>
+					<option value='24pt'>Extra Large</option>
+					<option value='32pt'>XXL</option>
+				</select>
+			</fieldset>
+			<fieldset class="option">
+				<legend>Speed:</legend>
+				Turbo:<input type="checkbox" id='checkBox'></input>
+			</fieldset>
         </div>
-        
-        <fieldset>
-            <legend>Personalia:</legend>
-            Name: <input type="text"><br>
-            Email: <input type="text"><br>
-            Date of birth: <input type="text">
-        </fieldset>
+		
 	</body>
 </html>

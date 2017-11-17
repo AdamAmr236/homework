@@ -2,11 +2,18 @@ body {
     background-color: #CCCCFF;
     font-family: sans-serif;
     font-size: 14pt;
+    text-align: center;
 }
 
 .controlsarea {
-	text-align: center;
+    text-align: center;
 }
+
+#optionsarea {
+    text-align: center;
+    display: inline-block;
+}
+
 
 h1 {
 	font-family: sans-serif;
@@ -25,4 +32,6 @@ textarea {
     padding: 0.5em 2em; 
     border-style: solid;
     border-width: 5px; 
+    border-color: black;
+    display: inline;
 }
