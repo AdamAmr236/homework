@@ -40,7 +40,7 @@ function restartAnimation(){
     var numAnims = animationArray.length;
     animInterval = setInterval(
         function(){
-            animArea.innerHTML = animationArray[count]; 
+            animArea.value = animationArray[count];
             if(count == (numAnims - 1)){
                 count = 0;
             }else{
@@ -57,15 +57,20 @@ function startAnimation(){
         animArea = document.getElementById("inputarea");
         animation = animArea.value;
         animationArray = animation.split("=====");
-        
+
         var numAnims = animationArray.length;
+        // for (var j = 0; j < numAnims; j++){
+        //   console.log(animationArray[j]);
+        // }
+
         for (var i = 1; i < numAnims; i++){
             animationArray[i] = animationArray[i].replace(/\n/, '');
         }
         count = 0;
         animInterval = setInterval(
             function(){
-                animArea.innerHTML = animationArray[count]; 
+                console.log(animationArray[count]);
+                animArea.value = animationArray[count];
                 if(count == (numAnims - 1)){
                     count = 0;
                 }else{
@@ -81,7 +86,7 @@ function endAnimation(){
         document.getElementById("animation").disabled = false;
         document.getElementById("fontSize").disabled = false;
         clearInterval(animInterval);
-        document.getElementById("inputarea").innerHTML = animation;
+        document.getElementById("inputarea").value = animation;
         console.log("End Animation");
         count = 0;
     }
@@ -90,7 +95,7 @@ function endAnimation(){
 function changeAnimation() {
     var animationSelect = document.getElementById("animation");
     var animation = ANIMATIONS[animationSelect.value];
-    document.getElementById("inputarea").innerHTML = animation;
+    document.getElementById("inputarea").value = animation;
     // animationArray = animation.split("=====");
     // for (var i = 0; i < animationArray.length; i++){
     //     console.log(animationArray[i]);
@@ -103,4 +108,3 @@ function changeFontSize() {
     console.log(fontSize);
     document.getElementById("inputarea").style.fontSize = fontSize;
 }
-
