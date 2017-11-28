@@ -3,12 +3,14 @@ body {
 }
 
 #gameholder {
-    width: 600px;
+    /* width: 600px; */
     margin-left: auto;
     margin-right: auto;
 }
 
 #title {
+    display: block;
+    margin: auto;
     width: 600px;
     height: 150px;
     background-image:url('images/penguin_title.png');
@@ -142,18 +144,18 @@ body {
     background-image: url('images/penguin_8.png');
 }
 
-.yeti {
+#yeti {
     width: 200px;
     height: 200px;
     float: left;
     background-image:url('images/mound_9.png');
 }
 
-.yeti:hover {
+#yeti:hover {
     background-image:url('images/mound_9_hover.png');
     cursor: pointer;
 }
 
-.yeti:active{
+#yeti:active{
     background-image: url('images/yeti.png');
 }
