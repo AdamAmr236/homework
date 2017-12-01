@@ -3,12 +3,18 @@
 	<head>
 		<title>Penguin Thing</title>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="penguin.css" />
+        <link rel="stylesheet" type="text/css" href="penguin.css" />
+        <style></style>
         <script src="node_modules/jquery/dist/jquery.min.js"></script>
 	</head>
 
 	<body>
     <div id="gameholder">
+        <fieldset class="option">
+            <legend>Number of Penguins:</legend>
+            <select id='penguinNum' onchange="startGame()">
+            </select> 
+        </fieldset>
         <div id="title"></div>
         <!-- <div class="penguin1"></div>
         <div class="penguin2"></div>
